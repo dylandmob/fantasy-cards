@@ -1,6 +1,6 @@
 import React from "react";
 import zupage from "zupage";
-import { Container, Image, Card } from "semantic-ui-react";
+import { ColorExtractor } from "react-color-extractor";
 import "./App.css";
 
 class App extends React.Component {
@@ -23,23 +23,29 @@ class App extends React.Component {
     this.setState({ characters });
   }
 
+  getColors = colors => {
+    console.log("Colors", colors);
+  };
+
   renderCards = () =>
     this.state.characters.map((character, i) => (
-      <Card key={character.name}>
-        <img className="fantasy-image" src={this.state.post.images[i].url} />
-        <Card.Content>
-          <Card.Header className="fanstasy-name">{character.name}</Card.Header>
-          <Card.Description>{character.description}</Card.Description>
-        </Card.Content>
-      </Card>
+      <div key={character.name} className="magic-card">
+        <h3 className="magic-name">{character.name}</h3>
+        <ColorExtractor getColors={this.getColors}>
+          <img
+            className="magic-image"
+            src={this.state.post.images[i].url}
+            alt="character"
+          />
+        </ColorExtractor>
+        <div className="magic-description-container">
+          <p className="magic-description">{character.description}</p>
+        </div>
+      </div>
     ));
 
   render() {
-    return (
-      <div className="bg-image">
-        <Card.Group centered>{this.renderCards()}</Card.Group>
-      </div>
-    );
+    return <div className="bg-image">{this.renderCards()}</div>;
   }
 }
 
