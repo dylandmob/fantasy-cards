@@ -1,6 +1,5 @@
 import React from "react";
 import zupage from "zupage";
-import { ColorExtractor } from "react-color-extractor";
 import "./App.css";
 
 class App extends React.Component {
@@ -14,30 +13,25 @@ class App extends React.Component {
     let charactersString = post.body.split("\n");
     let characters = [];
     charactersString.forEach((character, index) => {
-      var tup = character.split(":");
-      characters.push({
-        name: tup[0],
-        description: tup[1]
-      });
+      var data = character.split(":");
+      if (data[0] && data[1])
+        characters.push({
+          name: data[0],
+          description: data[1]
+        });
     });
     this.setState({ characters });
   }
 
-  getColors = colors => {
-    console.log("Colors", colors);
-  };
-
   renderCards = () =>
     this.state.characters.map((character, i) => (
       <div key={character.name} className="magic-card">
+        <img
+          className="magic-image"
+          src={this.state.post.images[i].url}
+          alt="character"
+        />
         <h3 className="magic-name">{character.name}</h3>
-        <ColorExtractor getColors={this.getColors}>
-          <img
-            className="magic-image"
-            src={this.state.post.images[i].url}
-            alt="character"
-          />
-        </ColorExtractor>
         <div className="magic-description-container">
           <p className="magic-description">{character.description}</p>
         </div>

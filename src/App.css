@@ -12,40 +12,46 @@
   height: 400px;
   width: 300px;
   margin: 30px;
-  border-width: 8px;
+  border-width: 2px;
   border-style: solid;
-  border-radius: 5px;
-  background-color: black;
+  border-radius: 20px;
+  border-color: black;
   position: relative;
+  overflow: hidden;
 }
 
 .magic-name {
+  position: absolute;
   font-family: Luminari, fantasy;
   color: black;
-  background-color: #cecdc2;
-  border-radius: 5px;
-  margin-top: 35px;
-  margin-left: 2px;
-  margin-right: 2px;
+  text-align: center;
+  border-radius: 30px;
+  border-style: solid;
+  border-width: 2px;
+  background-color: white;
+  border-radius: 10px;
+  margin-top: 15px;
+  margin-left: 2.5%;
   padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
 .magic-image {
-  position: relative;
+  position: absolute;
   top: 0;
   bottom: 0;
-  height: 90%;
-  width: 95%;
-  margin-top: -10px;
-  margin-left: 2.5%;
+  height: 100%;
+  width: 100%;
   object-fit: cover;
+  z-index: 0;
 }
 
 .magic-description-container {
   position: absolute;
   bottom: 11px;
   background-color: white;
-  opacity: 0.7;
   width: 95%;
   margin-left: 2.5%;
   margin-right: 2.5%;
@@ -53,8 +59,8 @@
   padding-bottom: 10px;
   padding-left: 5px;
   padding-right: 5px;
-  border-radius: 5px;
-  border-width: 1px;
+  border-radius: 10px;
+  border-width: 2px;
   border-color: black;
   border-style: solid;
 }
