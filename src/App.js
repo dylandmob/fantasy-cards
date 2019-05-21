@@ -26,11 +26,16 @@ class App extends React.Component {
   renderCards = () =>
     this.state.characters.map((character, i) => (
       <div key={character.name} className="magic-card">
-        <img
-          className="magic-image"
-          src={this.state.post.images[i].url}
-          alt="character"
-        />
+        {this.state.post.images[i] ? (
+          <img
+            className="magic-image"
+            src={this.state.post.images[i].url || ""}
+            alt="character"
+          />
+        ) : (
+          <h4 className="no-image">No Image was found. Please add one!</h4>
+        )}
+
         <h3 className="magic-name">{character.name}</h3>
         <div className="magic-description-container">
           <p className="magic-description">{character.description}</p>

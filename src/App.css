@@ -1,11 +1,12 @@
 .bg-image {
-  height: 100vh;
   background-image: url(./ParchBG.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  padding-bottom: 500px;
 }
 
 .magic-card {
@@ -67,4 +68,10 @@
 
 .magic-description {
   font-family: Luminari, fantasy;
+}
+
+.no-image {
+  position: absolute;
+  top: 50%;
+  margin-left: 10px;
 }
