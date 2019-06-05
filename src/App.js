@@ -3,8 +3,6 @@ import zupage from "zupage";
 import bgImage from "./ParchBG.jpg";
 import "./App.css";
 
-console.log("BGImage", bgImage);
-
 class App extends React.Component {
   state = { characters: [] };
 
