@@ -1,6 +1,9 @@
 import React from "react";
 import zupage from "zupage";
+import bgImage from "./ParchBG.jpg";
 import "./App.css";
+
+console.log("BGImage", bgImage);
 
 class App extends React.Component {
   state = { characters: [] };
@@ -44,7 +47,11 @@ class App extends React.Component {
     ));
 
   render() {
-    return <div className="bg-image">{this.renderCards()}</div>;
+    return (
+      <div className="bg-image" style={{ backgroundImage: `url(${bgImage})` }}>
+        {this.renderCards()}
+      </div>
+    );
   }
 }
 
